@@ -3,6 +3,50 @@
   
   
 ## 네트워크 인터페이스명 관련 기능 수행 자바 클래스
+- 사용 
+```java
+/* 모든 네트워크 인터페이스 출력 */
+NetworkInterfaceUtils.getInstance().printNetworkInterfaces();
+
+    Printing all network interfaces... This may take a few seconds.
+
+    Interface Name  : lo
+    Display Name    : Software Loopback Interface 1
+    Host Name       : kubernetes.docker.internal
+    Host Address    : 127.0.0.1
+    Host Name       : 0:0:0:0:0:0:0:1
+    Host Address    : 0:0:0:0:0:0:0:1
+    ====================================================================
+    Interface Name  : eth1
+    Display Name    : Realtek PCIe GBE Family Controller
+    Host Name       : host.docker.internal
+    Host Address    : 123.456.789.0
+    Host Name       : DESKTOP-BKFDLJR
+    Host Address    : ab12:3:4:5:67c8:90de:fghi:jklm%eth1
+    ====================================================================
+    Interface Name  : eth22
+    Display Name    : Hyper-V Virtual Ethernet Adapter
+    Host Name       : DESKTOP-BKFDLJR.mshome.net
+    Host Address    : 223.456.789.0
+    Host Name       : DESKTOP-BKFDLJR
+    Host Address    : bb12:3:4:5:67c8:90de:fghi:jklm%eth22
+    ====================================================================
+    Interface Name  : eth29
+    Display Name    : Hyper-V Virtual Ethernet Adapter #2
+    Host Name       : DESKTOP-BKFDLJR
+    Host Address    : 323.456.789.0
+    Host Name       : DESKTOP-BKFDLJR
+    Host Address    : cb12:3:4:5:67c8:90de:fghi:jklm%eth29
+    ====================================================================
+
+
+
+/* 123.456.789.0 */
+String ipv4 = NetworkInterfaceUtils.getInstance().getIPv4HostAddressByInterfaceName("eth1");    
+/* ab12:3:4:5:67c8:90de:fghi:jklm%eth1 */
+String macAddress = NetworkInterfaceUtils.getInstance().getMacAddressByInterfaceName("eth1");
+```
+
 - 주요 코드 
 ```java
 /* 모든 네트워크 인터페이스 정보를 가져옴 */
