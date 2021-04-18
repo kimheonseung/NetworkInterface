@@ -1,7 +1,3 @@
-# NetworkInterface
-  
-  
-  
 ### Utils about NetworkInterface Using Java Native Library
 - Usage 
 ```java
