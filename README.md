@@ -2,8 +2,8 @@
   
   
   
-## 네트워크 인터페이스명 관련 기능 수행 자바 클래스
-- 사용 
+### Utils about NetworkInterface Using Java Native Library
+- Usage 
 ```java
 /* 모든 네트워크 인터페이스 출력 */
 NetworkInterfaceUtils.getInstance().printNetworkInterfaces();
@@ -47,7 +47,7 @@ String ipv4 = NetworkInterfaceUtils.getInstance().getIPv4HostAddressByInterfaceN
 String macAddress = NetworkInterfaceUtils.getInstance().getMacAddressByInterfaceName("eth1");
 ```
 
-- 주요 코드 
+- core code 
 ```java
 /* 모든 네트워크 인터페이스 정보를 가져옴 */
 Enumeration<NetworkInterface> niEnums = NetworkInterface.getNetworkInterfaces();
